@@ -1,4 +1,4 @@
-package baseball2.domain;
+package baseball.domain;
 
 public enum AnswerKind {
   CORRECT,

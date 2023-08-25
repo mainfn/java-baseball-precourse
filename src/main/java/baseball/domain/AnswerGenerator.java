@@ -1,4 +1,4 @@
-package baseball2.domain;
+package baseball.domain;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,10 +14,10 @@ public final class AnswerGenerator {
   }
 
   public BaseBallRecord generate() {
-    Set<Integer> numberSet = new HashSet<>();
+    final Set<Integer> numberSet = new HashSet<>();
 
     while (numberSet.size() < 3) {
-      int number = randomNumberGenerator.generate();
+      final int number = randomNumberGenerator.generate();
       numberSet.add(number);
     }
 

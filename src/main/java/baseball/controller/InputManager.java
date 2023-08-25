@@ -1,6 +1,6 @@
-package baseball2.controller;
+package baseball.controller;
 
-import baseball2.domain.BaseBallRecord;
+import baseball.domain.BaseBallRecord;
 import camp.nextstep.edu.missionutils.Console;
 
 public final class InputManager {
