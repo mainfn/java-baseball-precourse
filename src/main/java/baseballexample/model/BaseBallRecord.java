@@ -1,4 +1,4 @@
-package baseball.model;
+package baseballexample.model;
 
 public final class BaseBallRecord {
 
