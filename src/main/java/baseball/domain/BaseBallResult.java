@@ -38,7 +38,7 @@ public final class BaseBallResult {
 
   }
 
-  public static boolean isStrikeAt(
+  private static boolean isStrikeAt(
       final int index,
       final BaseBallRecord guess,
       final BaseBallRecord answer
@@ -46,21 +46,20 @@ public final class BaseBallResult {
     return answer.comparesAt(index, guess);
   }
 
-  public static boolean isBallAt(
+  private static boolean isBallAt(
       final int index,
       final BaseBallRecord guess,
       final BaseBallRecord answer
   ) {
     return answer.containsAt(index, guess);
   }
-
-  public int getBallCount() {
-    return ballCount;
-  }
-
-  public int getStrikeCount() {
-    return strikeCount;
-  }
+//  public int getBallCount() {
+//    return ballCount;
+//  }
+//
+//  public int getStrikeCount() {
+//    return strikeCount;
+//  }
 
   public boolean isThreeStrike() {
     return strikeCount == 3;
@@ -82,4 +81,22 @@ public final class BaseBallResult {
   public int hashCode() {
     return Objects.hash(ballCount, strikeCount);
   }
+
+  @Override
+  public String toString() {
+    if (ballCount + strikeCount == 0) {
+      return "낫싱\n";
+    }
+
+    final StringBuilder sb = new StringBuilder();
+    if (ballCount > 0) {
+      sb.append(String.format("%d볼 ", ballCount));
+    }
+    if (strikeCount > 0) {
+      sb.append(String.format("%d스트라이크", strikeCount));
+    }
+    sb.append("\n");
+    return sb.toString();
+  }
 }
+

@@ -33,10 +33,10 @@ public final class GameController {
 
     while (true) {
       final AnswerKind answerKind = guess(answer);
+      final boolean isCorrect = answerKind == AnswerKind.CORRECT;
 
-      if (answerKind == AnswerKind.CORRECT) {
+      if (isCorrect) {
         break;
-
       }
     }
 
