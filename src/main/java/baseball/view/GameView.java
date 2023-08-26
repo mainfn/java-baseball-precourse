@@ -8,7 +8,7 @@ public final class GameView {
   public AnswerKind render(final BaseBallResult baseBallResult) {
     System.out.println(baseBallResult.toString());
 
-    if (baseBallResult.isThreeStrike()) {
+    if (baseBallResult.isAllStrike()) {
       return AnswerKind.CORRECT;
     }
     return AnswerKind.WRONG;

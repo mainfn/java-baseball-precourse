@@ -23,7 +23,7 @@ public final class BaseBallResult {
     int strikeCount = 0;
     int ballCount = 0;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < BaseBallRecord.NUMBERS_COUNT; i++) {
       if (isStrikeAt(i, guess, answer)) {
         strikeCount++;
         continue;
@@ -53,16 +53,10 @@ public final class BaseBallResult {
   ) {
     return answer.containsAt(index, guess);
   }
-//  public int getBallCount() {
-//    return ballCount;
-//  }
-//
-//  public int getStrikeCount() {
-//    return strikeCount;
-//  }
 
-  public boolean isThreeStrike() {
-    return strikeCount == 3;
+
+  public boolean isAllStrike() {
+    return strikeCount == BaseBallRecord.NUMBERS_COUNT;
   }
 
   @Override

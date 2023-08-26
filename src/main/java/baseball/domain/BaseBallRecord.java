@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public final class BaseBallRecord {
 
+  public static final int NUMBERS_COUNT = 3;
   private final int first;
   private final int second;
   private final int third;
@@ -38,7 +39,7 @@ public final class BaseBallRecord {
   }
 
   private static void validateNumbers(final List<Integer> numbers) {
-    if (numbers.size() != 3) {
+    if (numbers.size() != NUMBERS_COUNT) {
       throw new IllegalArgumentException(
           "BaseBallRecord.from에 사용될 numbers List는 반드시 size가 3이어야 한답니다^^");
     }

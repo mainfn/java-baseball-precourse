@@ -6,7 +6,6 @@ import java.util.Set;
 
 public final class AnswerGenerator {
 
-
   private final RandomNumberGenerator randomNumberGenerator;
 
   public AnswerGenerator(final RandomNumberGenerator randomNumberGenerator) {
