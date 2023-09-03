@@ -1,5 +1,6 @@
 package baseball.util;
 
+import baseball.domain.Numbers;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -19,12 +20,12 @@ public final class RandomNumbersGenerator {
     this.endInclusive = endInclusive;
   }
 
-  public List<Integer> generateNumbers() {
+  public Numbers generateNumbers() {
     final Set<Integer> numbers = new HashSet<>();
     while (numbers.size() < 3) {
       numbers.add(generateNumber());
     }
-    return new ArrayList<>(numbers);
+    return Numbers.of(new ArrayList<>(numbers));
   }
 
   private boolean isDuplicate(final List<Integer> numbers, final Integer newNumber) {
