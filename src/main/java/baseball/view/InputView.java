@@ -1,6 +1,10 @@
 package baseball.view;
 
+import baseball.domain.Numbers;
 import camp.nextstep.edu.missionutils.Console;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public final class InputView {
 
@@ -10,9 +14,13 @@ public final class InputView {
     this.outputView = outputView;
   }
 
-  public Integer inputNumbers() {
+  public Numbers inputNumbers() {
     try {
-      return Integer.parseInt(readLine());
+      final List<Integer> numbers = Arrays.stream(readLine().split(""))
+          .map(Integer::parseInt)
+          .collect(Collectors.toList());
+
+      return Numbers.of((numbers));
     } catch (final Exception e) {
       throw new IllegalArgumentException("잘못된 입력입니다. 숫자를 입력해주세요.");
     }
