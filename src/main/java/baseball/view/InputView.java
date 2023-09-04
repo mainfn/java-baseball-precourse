@@ -15,6 +15,7 @@ public final class InputView {
   }
 
   public Numbers inputNumbers() {
+    outputView.printInputNumbersMessage();
     try {
       final List<Integer> numbers = Arrays.stream(readLine().split(""))
           .map(Integer::parseInt)
@@ -26,7 +27,10 @@ public final class InputView {
     }
   }
 
-  public boolean inputRestartOrQuit() {
+  public boolean inputRestart() {
+
+    outputView.printGameClearMessage();
+
     final String input = readLine();
 
     if ("1".equals(input)) {
