@@ -1,5 +1,7 @@
 package baseball.view;
 
+import baseball.domain.NumbersResult;
+
 public final class OutputView {
 
   public void printInputNumbersMessage() {
@@ -8,5 +10,9 @@ public final class OutputView {
 
   public void printGameClearMessage() {
     System.out.println(Message.GAME_CLEAR);
+  }
+
+  public void printGameResult(final NumbersResult result) {
+    System.out.println(result);
   }
 }
