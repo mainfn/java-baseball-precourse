@@ -1,5 +1,8 @@
 package baseball.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class NumbersResult {
 
   private final int ballCount;
@@ -26,11 +29,39 @@ public final class NumbersResult {
         strikeCount++;
         continue;
       }
-      answer.containsAt(i, guess);
-      ballCount++;
+      final boolean isBall = answer.containsAt(i, guess);
+      if (isBall) {
+        ballCount++;
+      }
     }
 
     return new NumbersResult(ballCount, strikeCount);
   }
+
+  public boolean isThreeStrike() {
+    return strikeCount == 3;
+  }
+
+  @Override
+  public String toString() {
+
+    if (ballCount == 0 && strikeCount == 0) {
+      return "낫싱";
+    }
+
+    final List<String> strs = new ArrayList<>();
+
+    if (ballCount > 0) {
+      strs.add(String.format("%d볼", ballCount));
+    }
+
+    if (strikeCount > 0) {
+      strs.add(String.format("%d스트라이크", strikeCount));
+    }
+
+    return String.join(" ", strs);
+
+  }
+
 
 }
