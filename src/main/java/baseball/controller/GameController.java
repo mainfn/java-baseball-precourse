@@ -27,11 +27,26 @@ public final class GameController {
     this.gameService = gameService;
   }
 
+  // controller/GameController.java
+
+
   public void start() {
+
+    boolean isPlaying = true;
+
+    while (isPlaying) {
+      play();
+      // 1을 입력한 경우 while 루프 재실행
+      // 2를 입력한 경우 종료
+      isPlaying = inputView.inputRestart();
+    }
+  }
+
+  private void play() {
+
     // 정답 숫자 생성
     final Numbers answer = randomNumbersGenerator.generateNumbers();
 
-    // 정답을 맞추고 게임 종료 시 루프 탈출
     while (true) {
       // 사용자 입력 받아서 숫자 생성
       final Numbers guess = inputView.inputNumbers();
@@ -40,9 +55,12 @@ public final class GameController {
       final NumbersResult gameResult = gameService.getGameResult(answer, guess);
 
       // 결과 출력
+      outputView.printGameResult(gameResult);
 
-      // 정답인 경우 재시작, 게임 종료 중 사용자가 원하는 기능 수행
+      // 정답인 경우 반환
+      if (gameResult.isThreeStrike()) {
+        return;
+      }
     }
-
   }
 }
