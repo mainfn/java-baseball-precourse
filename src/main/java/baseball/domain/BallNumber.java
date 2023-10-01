@@ -43,4 +43,12 @@ public final class BallNumber {
       throw new IllegalArgumentException("BallNumbers의 숫자는 중복될 수 없습니다.");
     }
   }
+
+  public boolean comparesAt(final int index, final BallNumber other) {
+    return this.ballNumbers.get(index) == other.ballNumbers.get(index);
+  }
+
+  public boolean containsAt(final int index, final BallNumber other) {
+    return this.ballNumbers.contains(other.ballNumbers.get(index));
+  }
 }
