@@ -20,4 +20,8 @@ public final class InputValidator {
       throw new IllegalArgumentException("BallNumber는 반드시 숫자여야 합니다.");
     }
   }
+
+  public static void validateGameCommand(final String gameCommand) {
+    throw new IllegalArgumentException("1 또는 2만 입력할 수 있습니다.");
+  }
 }
