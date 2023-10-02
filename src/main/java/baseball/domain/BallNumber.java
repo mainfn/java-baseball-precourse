@@ -55,4 +55,16 @@ public final class BallNumber {
   public boolean containsAt(final int index, final BallNumber other) {
     return this.ballNumbers.contains(other.ballNumbers.get(index));
   }
+
+  public int getFirst() {
+    return ballNumbers.get(0);
+  }
+
+  public int getSecond() {
+    return ballNumbers.get(1);
+  }
+
+  public int getThird() {
+    return ballNumbers.get(2);
+  }
 }
