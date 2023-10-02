@@ -14,10 +14,14 @@ public final class BallNumber {
     this.ballNumbers = ballNumbers;
   }
 
+  public static BallNumber of(final List<Integer> ballNumbers) {
+    return new BallNumber(ballNumbers);
+  }
+
   public static BallNumber from(final String ballNumbersString) {
     final List<Integer> ballNumbers = new ArrayList<>();
 
-    for (final String ballNumberString : ballNumbersString.split(" ")) {
+    for (final String ballNumberString : ballNumbersString.split("")) {
       final int ballNumber = Integer.parseInt(ballNumberString);
       ballNumbers.add(ballNumber);
     }
